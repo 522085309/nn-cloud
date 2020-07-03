@@ -1,0 +1,10 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: nn-gateway
+  cloud:
+    nacos:
+      discovery:
+      # 服务注册地址
+        server-addr: 127.0.0.1:8848

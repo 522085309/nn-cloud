@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/nn-auth/nn-auth.iml" filepath="$PROJECT_DIR$/nn-auth/nn-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-bus/nn-bus.iml" filepath="$PROJECT_DIR$/nn-bus/nn-bus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-common/nn-common.iml" filepath="$PROJECT_DIR$/nn-common/nn-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-common/nn-common-core/nn-common-core.iml" filepath="$PROJECT_DIR$/nn-common/nn-common-core/nn-common-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-bus/nn-device/nn-device.iml" filepath="$PROJECT_DIR$/nn-bus/nn-device/nn-device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-gateway/nn-gateway.iml" filepath="$PROJECT_DIR$/nn-gateway/nn-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-modules/nn-modules.iml" filepath="$PROJECT_DIR$/nn-modules/nn-modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-modules/nn-pay/nn-pay.iml" filepath="$PROJECT_DIR$/nn-modules/nn-pay/nn-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nncloud.iml" filepath="$PROJECT_DIR$/nncloud.iml" />
+    </modules>
+  </component>
+</project>

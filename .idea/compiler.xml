@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="nn-auth" />
+        <module name="nn-common-cord" />
+        <module name="nn-common-core" />
+        <module name="nn-device" />
+        <module name="nn-gataway" />
+        <module name="nn-gateway" />
+        <module name="nn-pay" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="nn-auth" target="1.8" />
+      <module name="nn-bus" target="1.8" />
+      <module name="nn-common" target="1.8" />
+      <module name="nn-common-cord" target="1.8" />
+      <module name="nn-common-core" target="1.8" />
+      <module name="nn-device" target="1.8" />
+      <module name="nn-gataway" target="1.8" />
+      <module name="nn-gateway" target="1.8" />
+      <module name="nn-modules" target="1.8" />
+      <module name="nn-pay" target="1.8" />
+      <module name="nncloud" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
