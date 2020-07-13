@@ -1,6 +1,7 @@
 package com.atxx.utils.ip;
 
-import com.ruoyi.common.core.utils.StringUtils;
+
+import com.atxx.utils.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;

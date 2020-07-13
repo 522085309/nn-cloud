@@ -3,4 +3,34 @@ spring:
     gateway:
       enabled: true
       routes:
-      - id:
+      - id: nn-auth
+        uri: lb://nn-auth
+        predicates:
+          - Path=/auth/**
+      - id: nn-system
+        uri: lb://nn-system
+        predicates:
+          - Path=/system/**
+      - id: nn-device
+        uri: lb://nn-device
+        predicates:
+          - Path=/equipment/**
+      - id: nn-trade
+        uri: lb://nn-trade
+        predicates:
+          - Path=/trade/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:40000/auth/rsa/publicKey' #配置RSA的公钥访问地址
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
+security:
+  ignore:
+    urls: #配置白名单路径
+      - "/actuator/**"
+      - "/auth/oauth/token"

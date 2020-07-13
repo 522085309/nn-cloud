@@ -1,6 +1,7 @@
 package com.atxx.utils;
 
-import com.ruoyi.common.core.text.UUID;
+
+import cn.hutool.core.lang.UUID;
 
 /**
  * ID生成器工具类

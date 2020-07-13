@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atxx.trade.mapper.TradeAlipayUnionDetailMapper">
+    
+    <resultMap type="TradeAlipayUnionDetail" id="TradeAlipayUnionDetailResult">
+        <result property="id"    column="id"    />
+        <result property="deptId"    column="dept_id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="guestId"    column="guest_id"    />
+        <result property="deviceId"    column="device_id"    />
+        <result property="tradeType"    column="trade_type"    />
+        <result property="tradeUserId"    column="trade_user_id"    />
+        <result property="transitWalletId"    column="transit_wallet_id"    />
+        <result property="outTripNo"    column="out_trip_no"    />
+        <result property="scanQrTime"    column="scan_qr_time"    />
+        <result property="tripType"    column="trip_type"    />
+        <result property="voucherNo"    column="voucher_no"    />
+        <result property="qrcData"    column="qrc_data"    />
+        <result property="bcpDeviceId"    column="bcp_device_id"    />
+        <result property="busNum"    column="bus_num"    />
+        <result property="routeNo"    column="route_no"    />
+        <result property="routeId"    column="route_id"    />
+        <result property="fareVersion"    column="fare_version"    />
+        <result property="bound"    column="bound"    />
+        <result property="stgnr"    column="stgnr"    />
+        <result property="fareType"    column="fare_type"    />
+        <result property="stopId"    column="stop_id"    />
+        <result property="longitudeGps"    column="longitude_gps"    />
+        <result property="latitudeGps"    column="latitude_GPS"    />
+        <result property="adultFare"    column="adult_fare"    />
+        <result property="realFare"    column="real_fare"    />
+        <result property="mchCreateIp"    column="mch_create_ip"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="status"    column="status"    />
+        <result property="distinctFiled"    column="distinct_field"    />
+    </resultMap>
+
+    <sql id="selectTradeAlipayUnionDetailVo">
+        select id, dept_id, user_id, guest_id, device_id, trade_type, trade_user_id, transit_wallet_id, out_trip_no, scan_qr_time, trip_type, voucher_no, qrc_data, bcp_device_id, bus_num, route_no, route_id, fare_version, bound, stgnr, fare_type, stop_id, longitude_gps, latitude_GPS, adult_fare, real_fare, mch_create_ip, create_by, create_time, update_by, update_time, remark, status, distinct_field from trade_alipay_union_detail as d
+    </sql>
+
+    <select id="selectTradeAlipayUnionDetailList" parameterType="TradeAlipayUnionDetail" resultMap="TradeAlipayUnionDetailResult">
+        <include refid="selectTradeAlipayUnionDetailVo"/>
+        <where>
+            <if test="deviceId != null  and deviceId != ''"> and device_id = #{deviceId}</if>
+            <if test="busNum != null  and busNum != ''"> and bus_num = #{busNum}</if>
+            <if test="routeNo != null  and routeNo != ''"> and route_no = #{routeNo}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            <if test="tradeType != null  and tradeType != ''"> and trade_type = #{tradeType}</if>
+            <if test="beginTime != null and beginTime != ''"><!-- 开始时间检索 -->
+                AND date_format(d.scan_qr_time,'%y%m%d') &gt;= date_format(#{beginTime},'%y%m%d')
+            </if>
+            <if test="endTime != null and endTime != ''"><!-- 结束时间检索 -->
+                AND date_format(d.scan_qr_time,'%y%m%d') &lt;= date_format(#{endTime},'%y%m%d')
+            </if>
+            ${dataScope}
+        </where>
+    </select>
+
+    <select id="selectTradeAlipayUnionDetailById" parameterType="String" resultMap="TradeAlipayUnionDetailResult">
+        <include refid="selectTradeAlipayUnionDetailVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTradeAlipayUnionDetail" parameterType="TradeAlipayUnionDetail">
+        insert into trade_alipay_union_detail
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''">id,</if>
+            <if test="deptId != null ">dept_id,</if>
+            <if test="userId != null ">user_id,</if>
+            <if test="guestId != null  and guestId != ''">guest_id,</if>
+            <if test="deviceId != null  and deviceId != ''">device_id,</if>
+            <if test="tradeType != null  and tradeType != ''">trade_type,</if>
+            <if test="tradeUserId != null  and tradeUserId != ''">trade_user_id,</if>
+            <if test="transitWalletId != null  and transitWalletId != ''">transit_wallet_id,</if>
+            <if test="outTripNo != null  and outTripNo != ''">out_trip_no,</if>
+            <if test="scanQrTime != null  and scanQrTime != ''">scan_qr_time,</if>
+            <if test="tripType != null  and tripType != ''">trip_type,</if>
+            <if test="voucherNo != null  and voucherNo != ''">voucher_no,</if>
+            <if test="qrcData != null  and qrcData != ''">qrc_data,</if>
+            <if test="bcpDeviceId != null  and bcpDeviceId != ''">bcp_device_id,</if>
+            <if test="busNum != null  and busNum != ''">bus_num,</if>
+            <if test="routeNo != null  and routeNo != ''">route_no,</if>
+            <if test="routeId != null  and routeId != ''">route_id,</if>
+            <if test="fareVersion != null  and fareVersion != ''">fare_version,</if>
+            <if test="bound != null  and bound != ''">bound,</if>
+            <if test="stgnr != null  and stgnr != ''">stgnr,</if>
+            <if test="fareType != null  and fareType != ''">fare_type,</if>
+            <if test="stopId != null  and stopId != ''">stop_id,</if>
+            <if test="longitudeGps != null  and longitudeGps != ''">longitude_gps,</if>
+            <if test="latitudeGps != null  and latitudeGps != ''">latitude_GPS,</if>
+            <if test="adultFare != null ">adult_fare,</if>
+            <if test="realFare != null ">real_fare,</if>
+            <if test="mchCreateIp != null  and mchCreateIp != ''">mch_create_ip,</if>
+            <if test="createBy != null  and createBy != ''">create_by,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateBy != null  and updateBy != ''">update_by,</if>
+            <if test="updateTime != null ">update_time,</if>
+            <if test="remark != null  and remark != ''">remark,</if>
+            <if test="status != null  and status != ''">status,</if>
+            <if test="distinctFiled != null  and distinctFiled != ''">distinct_field,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''">#{id},</if>
+            <if test="deptId != null ">#{deptId},</if>
+            <if test="userId != null ">#{userId},</if>
+            <if test="guestId != null  and guestId != ''">#{guestId},</if>
+            <if test="deviceId != null  and deviceId != ''">#{deviceId},</if>
+            <if test="tradeType != null  and tradeType != ''">#{tradeType},</if>
+            <if test="tradeUserId != null  and tradeUserId != ''">#{tradeUserId},</if>
+            <if test="transitWalletId != null  and transitWalletId != ''">#{transitWalletId},</if>
+            <if test="outTripNo != null  and outTripNo != ''">#{outTripNo},</if>
+            <if test="scanQrTime != null  and scanQrTime != ''">#{scanQrTime},</if>
+            <if test="tripType != null  and tripType != ''">#{tripType},</if>
+            <if test="voucherNo != null  and voucherNo != ''">#{voucherNo},</if>
+            <if test="qrcData != null  and qrcData != ''">#{qrcData},</if>
+            <if test="bcpDeviceId != null  and bcpDeviceId != ''">#{bcpDeviceId},</if>
+            <if test="busNum != null  and busNum != ''">#{busNum},</if>
+            <if test="routeNo != null  and routeNo != ''">#{routeNo},</if>
+            <if test="routeId != null  and routeId != ''">#{routeId},</if>
+            <if test="fareVersion != null  and fareVersion != ''">#{fareVersion},</if>
+            <if test="bound != null  and bound != ''">#{bound},</if>
+            <if test="stgnr != null  and stgnr != ''">#{stgnr},</if>
+            <if test="fareType != null  and fareType != ''">#{fareType},</if>
+            <if test="stopId != null  and stopId != ''">#{stopId},</if>
+            <if test="longitudeGps != null  and longitudeGps != ''">#{longitudeGps},</if>
+            <if test="latitudeGps != null  and latitudeGps != ''">#{latitudeGps},</if>
+            <if test="adultFare != null ">#{adultFare},</if>
+            <if test="realFare != null ">#{realFare},</if>
+            <if test="mchCreateIp != null  and mchCreateIp != ''">#{mchCreateIp},</if>
+            <if test="createBy != null  and createBy != ''">#{createBy},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+            <if test="remark != null  and remark != ''">#{remark},</if>
+            <if test="status != null  and status != ''">#{status},</if>
+            <if test="distinctFiled != null  and distinctFiled != ''">#{distinctFiled},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTradeAlipayUnionDetail" parameterType="TradeAlipayUnionDetail">
+        update trade_alipay_union_detail
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="deptId != null ">dept_id = #{deptId},</if>
+            <if test="userId != null ">user_id = #{userId},</if>
+            <if test="guestId != null  and guestId != ''">guest_id = #{guestId},</if>
+            <if test="deviceId != null  and deviceId != ''">device_id = #{deviceId},</if>
+            <if test="tradeType != null  and tradeType != ''">trade_type = #{tradeType},</if>
+            <if test="tradeUserId != null  and tradeUserId != ''">trade_user_id = #{tradeUserId},</if>
+            <if test="transitWalletId != null  and transitWalletId != ''">transit_wallet_id = #{transitWalletId},</if>
+            <if test="outTripNo != null  and outTripNo != ''">out_trip_no = #{outTripNo},</if>
+            <if test="scanQrTime != null  and scanQrTime != ''">scan_qr_time = #{scanQrTime},</if>
+            <if test="tripType != null  and tripType != ''">trip_type = #{tripType},</if>
+            <if test="voucherNo != null  and voucherNo != ''">voucher_no = #{voucherNo},</if>
+            <if test="qrcData != null  and qrcData != ''">qrc_data = #{qrcData},</if>
+            <if test="bcpDeviceId != null  and bcpDeviceId != ''">bcp_device_id = #{bcpDeviceId},</if>
+            <if test="busNum != null  and busNum != ''">bus_num = #{busNum},</if>
+            <if test="routeNo != null  and routeNo != ''">route_no = #{routeNo},</if>
+            <if test="routeId != null  and routeId != ''">route_id = #{routeId},</if>
+            <if test="fareVersion != null  and fareVersion != ''">fare_version = #{fareVersion},</if>
+            <if test="bound != null  and bound != ''">bound = #{bound},</if>
+            <if test="stgnr != null  and stgnr != ''">stgnr = #{stgnr},</if>
+            <if test="fareType != null  and fareType != ''">fare_type = #{fareType},</if>
+            <if test="stopId != null  and stopId != ''">stop_id = #{stopId},</if>
+            <if test="longitudeGps != null  and longitudeGps != ''">longitude_gps = #{longitudeGps},</if>
+            <if test="latitudeGps != null  and latitudeGps != ''">latitude_GPS = #{latitudeGps},</if>
+            <if test="adultFare != null ">adult_fare = #{adultFare},</if>
+            <if test="realFare != null ">real_fare = #{realFare},</if>
+            <if test="mchCreateIp != null  and mchCreateIp != ''">mch_create_ip = #{mchCreateIp},</if>
+            <if test="createBy != null  and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+            <if test="remark != null  and remark != ''">remark = #{remark},</if>
+            <if test="status != null  and status != ''">status = #{status},</if>
+            <if test="distinctFiled != null  and distinctFiled != ''">distinct_field = #{distinctFiled},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTradeAlipayUnionDetailById" parameterType="String">
+        delete from trade_alipay_union_detail where id = #{id}
+    </delete>
+
+    <delete id="deleteTradeAlipayUnionDetailByIds" parameterType="String">
+        delete from trade_alipay_union_detail where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

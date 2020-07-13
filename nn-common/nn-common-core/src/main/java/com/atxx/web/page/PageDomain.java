@@ -1,6 +1,7 @@
 package com.atxx.web.page;
 
-import com.ruoyi.common.core.utils.StringUtils;
+
+import com.atxx.utils.StringUtils;
 
 /**
  * 分页数据

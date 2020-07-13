@@ -1,0 +1,12 @@
+server:
+  port: 40000
+  servlet:
+    context-path: /auth
+spring:
+  application:
+    name: nn-auth
+  cloud:
+    nacos:
+      discovery:
+      # 服务注册地址
+        server-addr: 127.0.0.1:8848

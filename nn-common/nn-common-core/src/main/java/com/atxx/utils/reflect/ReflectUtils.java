@@ -1,10 +1,10 @@
 package com.atxx.utils.reflect;
 
-import com.ruoyi.common.core.text.Convert;
-import com.ruoyi.common.core.utils.DateUtils;
+import cn.hutool.core.convert.Convert;
+import cn.hutool.core.date.DateUtil;
+import com.atxx.utils.DateUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
-import org.apache.poi.ss.usermodel.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -195,10 +195,10 @@ public class ReflectUtils
                         {
                             args[i] = DateUtils.parseDate(args[i]);
                         }
-                        else
-                        {
-                            args[i] = DateUtil.getJavaDate((Double) args[i]);
-                        }
+//                        else
+//                        {
+//                            args[i] = DateUtil.getJavaDate((Double) args[i]);
+//                        }
                     }
                 }
             }

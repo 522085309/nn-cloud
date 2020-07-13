@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    include: durid
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:

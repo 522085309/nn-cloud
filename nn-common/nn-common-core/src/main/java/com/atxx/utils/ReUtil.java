@@ -1,6 +1,7 @@
 package com.atxx.utils;
 
-import com.ruoyi.common.core.text.Convert;
+
+import cn.hutool.core.convert.Convert;
 
 import java.util.Arrays;
 import java.util.Collection;

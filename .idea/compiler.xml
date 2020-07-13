@@ -9,10 +9,13 @@
         <module name="nn-auth" />
         <module name="nn-common-cord" />
         <module name="nn-common-core" />
+        <module name="nn-common-vo" />
         <module name="nn-device" />
         <module name="nn-gataway" />
         <module name="nn-gateway" />
         <module name="nn-pay" />
+        <module name="nn-system" />
+        <module name="nn-trade" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,11 +24,14 @@
       <module name="nn-common" target="1.8" />
       <module name="nn-common-cord" target="1.8" />
       <module name="nn-common-core" target="1.8" />
+      <module name="nn-common-vo" target="1.8" />
       <module name="nn-device" target="1.8" />
       <module name="nn-gataway" target="1.8" />
       <module name="nn-gateway" target="1.8" />
       <module name="nn-modules" target="1.8" />
       <module name="nn-pay" target="1.8" />
+      <module name="nn-system" target="1.8" />
+      <module name="nn-trade" target="1.8" />
       <module name="nncloud" target="1.8" />
     </bytecodeTargetLevel>
   </component>

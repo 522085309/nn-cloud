@@ -44,7 +44,8 @@ public class BaseEntity implements Serializable
     /** 结束时间 */
     @JsonIgnore
     private String endTime;
-
+    /** 数据权限 */
+    private String dataScope;
     /** 请求参数 */
     private Map<String, Object> params;
 

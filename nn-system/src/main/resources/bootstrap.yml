@@ -1,0 +1,12 @@
+server:
+  port: 40001
+  servlet:
+    context-path: /system
+spring:
+  application:
+    name: nn-system
+  cloud:
+    nacos:
+      discovery:
+      # 服务注册地址
+        server-addr: 127.0.0.1:8848

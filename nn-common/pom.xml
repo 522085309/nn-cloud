@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>nn-common-core</module>
+        <module>nn-common-vo</module>
     </modules>
 
 

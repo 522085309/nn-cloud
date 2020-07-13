@@ -15,6 +15,7 @@
         <module>nn-common</module>
         <module>nn-modules</module>
         <module>nn-bus</module>
+        <module>nn-system</module>
     </modules>
 
     <properties>
@@ -26,6 +27,11 @@
         <mysql.version>8.0.18</mysql.version>
         <druid.version>1.1.16</druid.version>
         <hutool.version>5.1.0</hutool.version>
+        <jwt.version>8.16</jwt.version>
+        <redis.version>2.2.2.RELEASE</redis.version>
+        <security.version>2.2.2.RELEASE</security.version>
+        <mybatisplus.version>3.3.2</mybatisplus.version>
+        <secutiry.oauth.version>2.1.4.RELEASE</secutiry.oauth.version>
         <fastjson.version>1.2.70</fastjson.version>
         <pagehelper.boot.version>1.2.12</pagehelper.boot.version>
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
@@ -110,10 +116,48 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!--jwt-->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+
+            <!-- redis -->
+            <!-- SpringBoot Boot Redis -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
+
+            <!-- security -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${secutiry.oauth.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${security.version}</version>
+            </dependency>
+            <!-- Mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+
             <!-- nn模块-->
             <dependency>
                 <groupId>com.atxx</groupId>
                 <artifactId>nn-common-core</artifactId>
+                <version>${nn.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.atxx</groupId>
+                <artifactId>nn-common-vo</artifactId>
                 <version>${nn.version}</version>
             </dependency>
         </dependencies>

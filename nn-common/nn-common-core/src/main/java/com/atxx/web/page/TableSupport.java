@@ -1,6 +1,7 @@
 package com.atxx.web.page;
 
-import com.ruoyi.common.core.utils.ServletUtils;
+
+import com.atxx.utils.ServletUtils;
 
 /**
  * 表格数据处理

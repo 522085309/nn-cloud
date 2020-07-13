@@ -6,10 +6,13 @@
       <module fileurl="file://$PROJECT_DIR$/nn-bus/nn-bus.iml" filepath="$PROJECT_DIR$/nn-bus/nn-bus.iml" />
       <module fileurl="file://$PROJECT_DIR$/nn-common/nn-common.iml" filepath="$PROJECT_DIR$/nn-common/nn-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/nn-common/nn-common-core/nn-common-core.iml" filepath="$PROJECT_DIR$/nn-common/nn-common-core/nn-common-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-common/nn-common-vo/nn-common-vo.iml" filepath="$PROJECT_DIR$/nn-common/nn-common-vo/nn-common-vo.iml" />
       <module fileurl="file://$PROJECT_DIR$/nn-bus/nn-device/nn-device.iml" filepath="$PROJECT_DIR$/nn-bus/nn-device/nn-device.iml" />
       <module fileurl="file://$PROJECT_DIR$/nn-gateway/nn-gateway.iml" filepath="$PROJECT_DIR$/nn-gateway/nn-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/nn-modules/nn-modules.iml" filepath="$PROJECT_DIR$/nn-modules/nn-modules.iml" />
       <module fileurl="file://$PROJECT_DIR$/nn-modules/nn-pay/nn-pay.iml" filepath="$PROJECT_DIR$/nn-modules/nn-pay/nn-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-system/nn-system.iml" filepath="$PROJECT_DIR$/nn-system/nn-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nn-bus/nn-trade/nn-trade.iml" filepath="$PROJECT_DIR$/nn-bus/nn-trade/nn-trade.iml" />
       <module fileurl="file://$PROJECT_DIR$/nncloud.iml" filepath="$PROJECT_DIR$/nncloud.iml" />
     </modules>
   </component>
