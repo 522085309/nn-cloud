@@ -32,7 +32,7 @@
         <security.version>2.2.2.RELEASE</security.version>
         <mybatisplus.version>3.3.2</mybatisplus.version>
         <secutiry.oauth.version>2.1.4.RELEASE</secutiry.oauth.version>
-        <fastjson.version>1.2.70</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <pagehelper.boot.version>1.2.12</pagehelper.boot.version>
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
         <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
